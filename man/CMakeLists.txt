@@ -46,7 +46,7 @@ foreach(m IN LISTS MAN_NAMES)
     VERBATIM)
 
     list(APPEND PDF_FILES ${pdf})
-    install(FILES ${pdf} DESTINATION ${INSTALL_DATADIR}/ettercap/doc)
+    install(FILES ${pdf} DESTINATION ${CMAKE_INSTALL_DATADIR}/ettercap/doc)
   endif()
 endforeach()
 
@@ -58,25 +58,25 @@ endif()
 install(FILES ${CMAKE_BINARY_DIR}/man/ettercap.8
       ${CMAKE_BINARY_DIR}/man/etterfilter.8
       ${CMAKE_BINARY_DIR}/man/etterlog.8
-DESTINATION ${MAN_INSTALLDIR}/man8/)
+DESTINATION ${CMAKE_INSTALL_MANDIR}/man8/)
 configure_file("ettercap.8.in" "ettercap.8")
 configure_file("etterfilter.8.in" "etterfilter.8")
 configure_file("etterlog.8.in" "etterlog.8")
 configure_file("etter.conf.5.in" "etter.conf.5")
 
 if(ENABLE_PLUGINS)
-  install(FILES ${CMAKE_BINARY_DIR}/man/ettercap_plugins.8 DESTINATION ${MAN_INSTALLDIR}/man8/)
+  install(FILES ${CMAKE_BINARY_DIR}/man/ettercap_plugins.8 DESTINATION ${CMAKE_INSTALL_MANDIR}/man8/)
   configure_file("ettercap_plugins.8.in" "ettercap_plugins.8")
 endif()
 
 if(ENABLE_CURSES)
-  install(FILES ${CMAKE_BINARY_DIR}/man/ettercap_curses.8 DESTINATION ${MAN_INSTALLDIR}/man8/)
+  install(FILES ${CMAKE_BINARY_DIR}/man/ettercap_curses.8 DESTINATION ${CMAKE_INSTALL_MANDIR}/man8/)
   configure_file("ettercap_curses.8.in" "ettercap_curses.8")
 endif()
 
 if(INSTALL_DESKTOP)
-  install(FILES ${CMAKE_BINARY_DIR}/man/ettercap-pkexec.8 DESTINATION ${MAN_INSTALLDIR}/man8/)
+  install(FILES ${CMAKE_BINARY_DIR}/man/ettercap-pkexec.8 DESTINATION ${CMAKE_INSTALL_MANDIR}/man8/)
   configure_file("ettercap-pkexec.8.in" "ettercap-pkexec.8")
 endif()
 
-install(FILES ${CMAKE_BINARY_DIR}/man/etter.conf.5 DESTINATION ${MAN_INSTALLDIR}/man5/)
+install(FILES ${CMAKE_BINARY_DIR}/man/etter.conf.5 DESTINATION ${CMAKE_INSTALL_MANDIR}/man5/)

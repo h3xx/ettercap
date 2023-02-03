@@ -7,7 +7,7 @@ if(HAVE_PCRE OR HAVE_PCRE2)
     target_link_libraries(sslstrip lib_ettercap)
     set_target_properties(sslstrip PROPERTIES PREFIX "ec_")
     install(TARGETS sslstrip
-        LIBRARY DESTINATION ${INSTALL_LIBDIR}/ettercap/
+        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/ettercap/
         PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
                     GROUP_READ GROUP_EXECUTE
                     WORLD_READ WORLD_EXECUTE)
@@ -58,7 +58,7 @@ foreach(plugin ${PLUGINS})
   set_target_properties(${plugin} PROPERTIES PREFIX "ec_")
   target_link_libraries(${plugin} lib_ettercap)
   install(TARGETS ${plugin}
-        LIBRARY DESTINATION ${INSTALL_LIBDIR}/ettercap/
+        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/ettercap/
         PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
                     GROUP_READ GROUP_EXECUTE
                     WORLD_READ WORLD_EXECUTE)

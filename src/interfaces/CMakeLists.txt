@@ -110,4 +110,4 @@ set_target_properties(ec_interfaces PROPERTIES
   SOVERSION 0
   )
 target_link_libraries(ec_interfaces ${EC_INTERFACES_LIBS} ${EC_LIBS})
-install(TARGETS ec_interfaces DESTINATION ${INSTALL_LIBDIR})
+install(TARGETS ec_interfaces DESTINATION ${CMAKE_INSTALL_LIBDIR})

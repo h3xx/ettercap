@@ -47,10 +47,10 @@ endforeach()
 install(FILES
         ${CMAKE_CURRENT_BINARY_DIR}/${EC_CONFFILES}
         ${CMAKE_CURRENT_BINARY_DIR}/etter.conf
-        DESTINATION ${INSTALL_SYSCONFDIR}/ettercap)
+        DESTINATION ${CMAKE_INSTALL_SYSCONFDIR}/ettercap)
 install(FILES
         ${CMAKE_CURRENT_BINARY_DIR}/${EC_DATAFILES}
-        DESTINATION ${INSTALL_DATADIR}/ettercap)
+        DESTINATION ${CMAKE_INSTALL_DATADIR}/ettercap)
 
 # since ettercap now uses this file as the application icon
 # we still need the icon even if the desktop file is not being installed

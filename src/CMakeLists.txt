@@ -234,7 +234,7 @@ set_target_properties(lib_ettercap PROPERTIES
   SOVERSION 0
   )
 
-install(TARGETS lib_ettercap DESTINATION ${INSTALL_LIBDIR})
+install(TARGETS lib_ettercap DESTINATION ${CMAKE_INSTALL_LIBDIR})
 if(NOT LIBRARY_BUILD)
-  install(TARGETS ettercap DESTINATION ${INSTALL_BINDIR})
+  install(TARGETS ettercap DESTINATION ${CMAKE_INSTALL_BINDIR})
 endif()
